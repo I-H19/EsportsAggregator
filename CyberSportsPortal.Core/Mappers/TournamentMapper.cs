@@ -18,7 +18,6 @@ public class TournamentMapper
 
     public TournamentView Map(Tournament tournament)
     {
-        Console.WriteLine("GET TOURNAMENT STATUS: " + _tournamentTasksService.GetTournamentStatus(tournament));
         return new TournamentView
         {
             Id = tournament.Id,
