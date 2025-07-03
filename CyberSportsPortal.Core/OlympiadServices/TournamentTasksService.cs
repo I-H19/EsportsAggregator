@@ -38,12 +38,20 @@ public class TournamentTasksService
 
     public int ComparePrizes(string prizeA, string prizeB)
     {
-        if (prizeA == prizeB)
-            return 0;
-        if (prizeA[prizeA.Length - 1] > prizeB[prizeB.Length - 1])
-            return 1;
+        int valueA = ExtractIntegerValue(prizeA);
+        int valueB = ExtractIntegerValue(prizeB);
+
+        return valueA.CompareTo(valueB);
+    }
+
+    private int ExtractIntegerValue(string prize)
+    {
+        string digitsOnly = new string(prize.Where(char.IsDigit).ToArray());
+
+        if (int.TryParse(digitsOnly, out int result))
+            return result;
         else
-            return -1;
+            return 0;
     }
 
     public Dictionary<int, decimal> GetTournamentVictoryProbabilities(List<TeamWithVictoryProbabilities> teams, Dictionary<int, int> standings)
