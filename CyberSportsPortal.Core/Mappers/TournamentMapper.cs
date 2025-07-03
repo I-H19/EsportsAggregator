@@ -1,6 +1,7 @@
 ﻿using CyberSportsPortal.Core.OlympiadServices;
 using CyberSportsPortal.Data.Entities;
 using CyberSportsPortal.Data.Model.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,6 +18,7 @@ public class TournamentMapper
 
     public TournamentView Map(Tournament tournament)
     {
+        Console.WriteLine("GET TOURNAMENT STATUS: " + _tournamentTasksService.GetTournamentStatus(tournament));
         return new TournamentView
         {
             Id = tournament.Id,

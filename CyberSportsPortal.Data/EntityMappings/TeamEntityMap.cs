@@ -11,7 +11,7 @@ namespace CyberSportsPortal.Data.EntityMappings
         {
             builder.Property(p => p.Name)
                 .IsRequired()
-                .HasMaxLength(DatabaseDefaults.NormalStringMaxLength);
+                .HasMaxLength(DatabaseDefaults.NORMAL_STRING_LENGTH);
         }
     }
 }

@@ -9,8 +9,8 @@ namespace CyberSportsPortal.Data.EntityMappings
     {
         public void Configure(EntityTypeBuilder<Tournament> builder)
         {
-            builder.Property(x => x.Name).IsRequired().HasMaxLength(DatabaseDefaults.NormalStringMaxLength);
-            builder.Property(x => x.Organizer).IsRequired().HasMaxLength(DatabaseDefaults.NormalStringMaxLength);
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(DatabaseDefaults.NORMAL_STRING_LENGTH);
+            builder.Property(x => x.Organizer).IsRequired().HasMaxLength(DatabaseDefaults.NORMAL_STRING_LENGTH);
             builder.Property(x => x.StartDate).IsRequired();
             builder.Property(x => x.EndDate).IsRequired();
         }

@@ -9,8 +9,8 @@ namespace CyberSportsPortal.Data.EntityMappings
     {
         public void Configure(EntityTypeBuilder<AdvertisingCompany> builder)
         {
-            builder.Property(p => p.Name).IsRequired().HasMaxLength(DatabaseDefaults.NormalStringMaxLength);
-            builder.Property(p => p.AdvertisementLink).IsRequired().HasMaxLength(DatabaseDefaults.NormalStringMaxLength);
+            builder.Property(p => p.Name).IsRequired().HasMaxLength(DatabaseDefaults.NORMAL_STRING_LENGTH);
+            builder.Property(p => p.AdvertisementLink).IsRequired().HasMaxLength(DatabaseDefaults.NORMAL_STRING_LENGTH);
         }
     }
 }
