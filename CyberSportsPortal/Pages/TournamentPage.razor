@@ -47,6 +47,7 @@ else
     {
         if (firstRender)
         {
+            Console.WriteLine("Авадакедвра напишись");
             Tournament = await TournamentService.GetTournamentByIdAsync(TournamentId);
             PlayersPerCountries = TournamentService.GetPlayersPerCountries(Tournament);
             Teams = Tournament.TeamParticipantInfos.Select(x => x.Team).ToList();

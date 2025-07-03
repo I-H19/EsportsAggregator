@@ -4,6 +4,7 @@ using CyberSportsPortal.Data.Model.Enums;
 using CyberSportsPortal.Data.Model.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CyberSportsPortal.Core.OlympiadServices;
 
@@ -26,7 +27,7 @@ public class TournamentTasksService
 
     public int GetPlayersFromCountryCount(List<Player> players, Country country)
     {
-        return 0;
+        return players.Count(player => player.Country == country);
     }
 
     public string GetTeamParticipantsNameString(List<Team> teams)
