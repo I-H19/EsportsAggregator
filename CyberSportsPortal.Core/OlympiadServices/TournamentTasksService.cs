@@ -32,14 +32,9 @@ public class TournamentTasksService
 
     public string GetTeamParticipantsNameString(List<Team> teams)
     {
-        string result = string.Empty;
-        for (int i = 0; i < teams.Count; i++)
-        {
-            result += teams[i].Name + ", ";
-        }
-
-        return result;
+        return string.Join(", ", teams.Select(t => t.Name));
     }
+
 
     public int ComparePrizes(string prizeA, string prizeB)
     {
